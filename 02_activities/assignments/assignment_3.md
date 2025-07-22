@@ -6,24 +6,70 @@
 - We will finish this class by giving you the chance to use what you have learned in a practical context, by creating data visualizations from raw data. 
 - Choose a dataset of interest from the [City of Toronto’s Open Data Portal](https://www.toronto.ca/city-government/data-research-maps/open-data/) or [Ontario’s Open Data Catalogue](https://data.ontario.ca/). 
 - Using Python and one other data visualization software (Excel or free alternative, Tableau Public, any other tool you prefer), create two distinct visualizations from your dataset of choice.  
+
+![alt text](image-2.png)
+
+
 - For each visualization, describe and justify: 
+311 Toronto Open Data 
     > What software did you use to create your data visualization?
+    I used Python with the matplotlib library to create a bar chart showing the top 10 most common 311 service requests in the City of Toronto.
 
     > Who is your intended audience? 
-    
+    The primary audience includes city planners, municipal service coordinators, and local government officials who want quick insights into the most frequent service concerns raised by residents. Secondary audiences could include advocacy groups or civic-minded residents.
+
     > What information or message are you trying to convey with your visualization? 
-    
+    The visualization communicates which types of municipal service issues generate the highest volume of 311 requests. This can help prioritize city resources and improve responsiveness to citizens’ concerns.
+
     > What aspects of design did you consider when making your visualization? How did you apply them? With what elements of your plots? 
-    
+    I focused on clarity, readability, and visual hierarchy. I used a clean bar chart with consistent coloring (skyblue) and added value labels above each bar to make comparison easier. I also rotated the x-axis labels for better legibility and ensured the title clearly stated the purpose of the graph.
+
     > How did you ensure that your data visualizations are reproducible? If the tool you used to make your data visualization is not reproducible, how will this impact your data visualization? 
-    
+    Python scripts are inherently reproducible as long as the data source is available. I documented all steps in code, which can be re-run or modified. The data cleaning, selection, and plotting logic are transparent and modular.
+
     > How did you ensure that your data visualization is accessible?  
-    
+    I avoided using red-green combinations, used large and readable fonts, and included clear axis labels. The bar chart’s simplicity also supports screen reader explanations.
+
     > Who are the individuals and communities who might be impacted by your visualization?  
-    
+    City residents—especially those in neighborhoods with service delays—could benefit if city planners use this data to improve response times. Public service departments might also use this insight for staffing and budget allocation.
+
     > How did you choose which features of your chosen dataset to include or exclude from your visualization? 
-    
+    I filtered the dataset to show the top 10 service request categories by volume, which focuses the viewer’s attention on the most pressing concerns while avoiding overcrowding.
+
     > What ‘underwater labour’ contributed to your final data visualization product?
+Much of the invisible work involved selecting a relevant dataset, cleaning and organizing the data, sorting the categories, choosing the right chart type, and iteratively testing visual design elements (labels, fonts, layout) to enhance comprehension.
+
+
+    Visualization 2: Excel (Pie Chart)
+
+
+  > What software did you use to create your data visualization?
+    I used Microsoft Excel to create a pie chart that represents the same top 10 311 service request categories from the dataset.
+
+    > Who is your intended audience? 
+    The pie chart is designed for community newsletters or public town hall presentations where visual simplicity helps engage a broader, non-technical audience.
+
+    > What information or message are you trying to convey with your visualization? 
+    It highlights the proportion of each service category relative to the total volume of requests, helping the public understand which issues dominate city concerns.
+
+    > What aspects of design did you consider when making your visualization? How did you apply them? With what elements of your plots? 
+    I selected a colorblind-friendly palette and used bold, legible labels. Each segment is labeled with both category name and percentage. I avoided 3D effects or clutter to maintain clarity.
+
+    > How did you ensure that your data visualizations are reproducible? If the tool you used to make your data visualization is not reproducible, how will this impact your data visualization? 
+    Although Excel is less reproducible than code, I preserved the original .xlsx file, including a “raw data” tab and an “output chart” tab. Anyone with access to Excel can follow the steps or modify the chart using the embedded formulas.
+
+    > How did you ensure that your data visualization is accessible?  
+    I used high-contrast colors and ensured the font size and labeling were large enough to be legible on various screens or printed materials. All data labels were added outside the chart for readability.
+
+    > Who are the individuals and communities who might be impacted by your visualization?  
+    The general public, neighborhood associations, and advocacy groups may use this data to push for more responsive services or targeted improvements in their area.
+
+    > How did you choose which features of your chosen dataset to include or exclude from your visualization? 
+    I kept the same top 10 categories for consistency with the Python visualization but excluded lower-frequency service types to avoid diluting the visual impact.
+
+    > What ‘underwater labour’ contributed to your final data visualization product?
+    Behind the scenes, I formatted raw CSV data, cleaned up column names, calculated category totals, experimented with different chart types, and verified accuracy across tools. Label formatting and chart refinement also required extra attention to detail.
+
 
 - This assignment is intentionally open-ended - you are free to create static or dynamic data visualizations, maps, or whatever form of data visualization you think best communicates your information to your audience of choice! 
 - Total word count should not exceed **(as a maximum) 1000 words** 
