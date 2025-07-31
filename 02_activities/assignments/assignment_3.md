@@ -6,9 +6,60 @@
 - We will finish this class by giving you the chance to use what you have learned in a practical context, by creating data visualizations from raw data. 
 - Choose a dataset of interest from the [City of Toronto’s Open Data Portal](https://www.toronto.ca/city-government/data-research-maps/open-data/) or [Ontario’s Open Data Catalogue](https://data.ontario.ca/). 
 - Using Python and one other data visualization software (Excel or free alternative, Tableau Public, any other tool you prefer), create two distinct visualizations from your dataset of choice.  
+Python Code : 
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+from pathlib import Path
+
+# 1) Load data
+df = pd.read_csv(DATA_PATH)
+
+# If there's a date column and you want to parse it (optional)
+if DATE_COL and DATE_COL in df.columns:
+    df[DATE_COL] = pd.to_datetime(df[DATE_COL], errors="coerce")
+
+# 2) Basic cleaning: drop rows with missing category
+df = df.dropna(subset=[CATEGORY_COL])
+
+# 3) Aggregate: Top 10 categories
+counts = df[CATEGORY_COL].value_counts().head(10)
+top10 = counts.sort_values(ascending=False)
+
+# 4) Plot bar chart (Top 10)
+plt.figure(figsize=(10, 6))
+plt.bar(top10.index, top10.values)
+plt.xticks(rotation=45, ha="right")
+plt.title(f"Top 10 by '{CATEGORY_COL}'")
+plt.xlabel(CATEGORY_COL)
+plt.ylabel("Count")
+plt.tight_layout()
+bar_png = "viz_top10_bar.png"
+plt.savefig(bar_png, dpi=150)
+plt.show()
+print(f"[Saved] {bar_png}")
+
+# 5) Export summary for Excel pie chart
+summary_path = "summary_for_excel.csv"
+top10.reset_index().rename(columns={"index": CATEGORY_COL, CATEGORY_COL: "Count"}).to_csv(summary_path, index=False)
+print(f"[Saved] {summary_path}")
+
+# (Optional) If you want a Python pie chart too:
+plt.figure(figsize=(8, 8))
+plt.pie(top10.values, labels=top10.index, autopct="%1.1f%%", startangle=140)
+plt.title(f"Share of Top 10 '{CATEGORY_COL}'")
+plt.tight_layout()
+pie_png = "viz_top10_pie.png"
+plt.savefig(pie_png, dpi=150)
+plt.show()
+print(f"[Saved] {pie_png}")
+
+
 
 ![alt text](image-2.png)
-
+Pie chart
+![alt text](image-3.png)
 
 - For each visualization, describe and justify: 
 311 Toronto Open Data 
